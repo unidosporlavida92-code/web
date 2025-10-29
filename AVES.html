@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aves en Peligro de Extinción en Bolivia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --celeste: #000000;
+      --amarillo: #18956e;
+      --gris-fondo: #749c9b;
+      --texto: #038567;
+      --blanco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--gris-fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--celeste), var(--amarillo));
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1100px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .animal {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: var(--blanco);
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .animal:hover {
+      transform: translateY(-6px);
+    }
+
+    .animal img {
+      width: 45%;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .animal .info {
+      flex: 1;
+    }
+
+    .animal h2 {
+      color: var(--celeste);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .animal p {
+      color: #636e72;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    .right {
+      flex-direction: row-reverse;
+    }
+
+    .boton-regresar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--celeste);
+      color: white;
+      font-weight: bold;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+
+    .boton-regresar:hover {
+      background-color: #74b9ff;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #2d3436;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .animal {
+        flex-direction: column;
+      }
+      .animal img {
+        width: 100%;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="boton-regresar">⬅️ Regresar</a>
+
+  <header>
+    <h1>Aves en Peligro de Extinción en Bolivia</h1>
+    <p>Conoce sus hábitats, amenazas y el rol ecológico que cumplen en la naturaleza.</p>
+  </header>
+
+  <main>
+    <section class="animal">
+      <img src="imagenes/condor andino.jpg" alt="Cóndor Andino">
+      <div class="info">
+        <h2>Cóndor Andino (Vultur gryphus)</h2>
+        <p><b>Hábitat:</b> Cordillera de los Andes, entre 3.000 y 5.000 m s.n.m.<br>
+        <b>Amenazas principales:</b> Caza ilegal, envenenamiento, pérdida de hábitat.<br>
+        <b>Medidas de conservación:</b> Protección en Apolobamba y Avaroa; educación ambiental.<br>
+        <b>Rol ecológico:</b> Carroñero esencial que limpia el ecosistema.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Aproximadamente 350 individuos.</p>
+
+        
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/guacamayu azul.webp" alt="Guacamayo Azulamarillo">
+      <div class="info">
+        <h2>Guacamayo Azulamarillo (Ara ararauna)</h2>
+        <p><b>Hábitat:</b> Bosques tropicales amazónicos (Beni, Pando, Santa Cruz).<br>
+        <b>Amenazas principales:</b> Tráfico ilegal y deforestación.<br>
+        <b>Medidas de conservación:</b> Reforestación y control del comercio ilegal.<br>
+        <b>Rol ecológico:</b> Dispersor de semillas del bosque.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Unos 1.000 ejemplares.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/pava.jpg" alt="Pava Copanani">
+      <div class="info">
+        <h2>Pava Copanani (Penelope bridgesi)</h2>
+        <p><b>Hábitat:</b> Bosques húmedos del norte de Bolivia.<br>
+        <b>Amenazas principales:</b> Caza excesiva y pérdida de cobertura vegetal.<br>
+        <b>Medidas de conservación:</b> Monitoreo en parques nacionales.<br>
+        <b>Rol ecológico:</b> Dispersora de semillas nativas.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Entre 800 y 1.200 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/pato.jpg" alt="Pato Crestudo">
+      <div class="info">
+        <h2>Pato Crestudo (Sarkidiornis melanotos)</h2>
+        <p><b>Hábitat:</b> Lagunas y humedales del oriente boliviano.<br>
+        <b>Amenazas principales:</b> Caza deportiva y contaminación del agua.<br>
+        <b>Medidas de conservación:</b> Protección de humedales.<br>
+        <b>Rol ecológico:</b> Controla insectos acuáticos.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Alrededor de 600 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/halcon.jpg" alt="Halcón de Aplomado">
+      <div class="info">
+        <h2>Halcón de Aplomado (Falco femoralis)</h2>
+        <p><b>Hábitat:</b> Llanuras y valles interandinos.<br>
+        <b>Amenazas principales:</b> Pesticidas y pérdida de zonas de anidación.<br>
+        <b>Medidas de conservación:</b> Protección de nidos.<br>
+        <b>Rol ecológico:</b> Controla poblaciones de roedores.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Cerca de 900 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/tucan.webp" alt="Tucán Toco">
+      <div class="info">
+        <h2>Tucán Toco (Ramphastos toco)</h2>
+        <p><b>Hábitat:</b> Selvas tropicales del oriente.<br>
+        <b>Amenazas principales:</b> Caza y tráfico de aves.<br>
+        <b>Medidas de conservación:</b> Programas de sensibilización.<br>
+        <b>Rol ecológico:</b> Dispersor de semillas frutales.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Alrededor de 1.500 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/flamenco.webp" alt="Flamenco Andino">
+      <div class="info">
+        <h2>Flamenco Andino (Phoenicoparrus andinus)</h2>
+        <p><b>Hábitat:</b> Lagunas altoandinas.<br>
+        <b>Amenazas principales:</b> Minería y cambio climático.<br>
+        <b>Medidas de conservación:</b> Protección de lagunas.<br>
+        <b>Rol ecológico:</b> Indicador ambiental.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Entre 8.000 y 10.000 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/lechuzon.jfif" alt="Lechuzón de Campo">
+      <div class="info">
+        <h2>Lechuzón de Campo (Asio flammeus)</h2>
+        <p><b>Hábitat:</b> Pastizales y zonas abiertas.<br>
+        <b>Amenazas principales:</b> Expansión agrícola.<br>
+        <b>Medidas de conservación:</b> Control del uso de agroquímicos.<br>
+        <b>Rol ecológico:</b> Controlador de roedores.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Aproximadamente 1.200 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/loro frente azul.jpg" alt="Loro Frente Azul">
+      <div class="info">
+        <h2>Loro Frente Azul (Amazona aestiva)</h2>
+        <p><b>Hábitat:</b> Bosques secos y sabanas.<br>
+        <b>Amenazas principales:</b> Tráfico ilegal y tala.<br>
+        <b>Medidas de conservación:</b> Reforestación y rescate de ejemplares.<br>
+        <b>Rol ecológico:</b> Dispersor de semillas.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Entre 2.000 y 3.000 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/coliberio.jfif" alt="Colibrí de Cochabamba">
+      <div class="info">
+        <h2>Colibrí de Cochabamba (Oreotrochilus adela)</h2>
+        <p><b>Hábitat:</b> Zonas altoandinas floridas.<br>
+        <b>Amenazas principales:</b> Deforestación y cambio climático.<br>
+        <b>Medidas de conservación:</b> Reforestación con especies nativas.<br>
+        <b>Rol ecológico:</b> Polinizador andino.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Menos de 700 individuos.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Proyecto Educativo – Aves en Peligro de Extinción en Bolivia
+  </footer>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mamíferos en Peligro de Extinción en Bolivia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde: #000000;
+      --azul: #217266;
+      --gris-fondo: #749c9b;
+      --texto: #2d3436;
+      --blanco: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--gris-fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--azul), var(--verde));
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1100px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .animal {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: var(--blanco);
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .animal:hover {
+      transform: translateY(-6px);
+    }
+
+    .animal img {
+      width: 45%;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .animal .info {
+      flex: 1;
+    }
+
+    .animal h2 {
+      color: var(--verde);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .animal p {
+      color: #636e72;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    .right {
+      flex-direction: row-reverse;
+    }
+
+    footer {
+      background: #2d3436;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .animal {
+        flex-direction: column;
+      }
+      .animal img {
+        width: 100%;
+        height: 220px;
+      }
+    }
+
+    .boton-regresar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--azul);
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+
+    .boton-regresar:hover {
+      background-color: #74b9ff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="boton-regresar">⬅️ Regresar</a>
+
+  <header>
+    <h1>Mamíferos en Peligro de Extinción en Bolivia</h1>
+    <p>Conoce las especies más amenazadas que forman parte de la rica fauna boliviana.</p>
+  </header>
+
+  <main>
+    <section class="animal">
+      <img src="imagenes/Jaguar.webp" alt="Jaguar">
+      <div class="info">
+        <h2>Jaguar (Panthera onca)</h2>
+        <p><b>Hábitat:</b> Selvas tropicales, bosques húmedos y sabanas.<br>
+        <b>Amenazas principales:</b> Pérdida de hábitat, caza ilegal y conflictos con ganadería.<br>
+        <b>Medidas de conservación:</b> Corredores ecológicos y control de caza furtiva.<br>
+        <b>Rol ecológico:</b> Depredador tope que regula poblaciones.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Entre 1.200 y 1.500 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/oso2.jpg" alt="Oso Andino">
+      <div class="info">
+        <h2>Oso Andino (Tremarctos ornatus)</h2>
+        <p><b>Hábitat:</b> Bosques nublados y páramos andinos.<br>
+        <b>Amenazas principales:</b> Caza, deforestación y conflictos con ganaderos.<br>
+        <b>Medidas de conservación:</b> Corredores biológicos y educación ambiental.<br>
+        <b>Rol ecológico:</b> Dispersor de semillas y regenerador del bosque.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Aproximadamente 600 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/tapir.jpg" alt="Tapir Amazónico">
+      <div class="info">
+        <h2>Tapir Amazónico (Tapirus terrestris)</h2>
+        <p><b>Hábitat:</b> Bosques tropicales y zonas ribereñas.<br>
+        <b>Amenazas principales:</b> Deforestación y caza ilegal.<br>
+        <b>Medidas de conservación:</b> Áreas protegidas y control de caza.<br>
+        <b>Rol ecológico:</b> Dispersor de semillas de gran tamaño.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Entre 800 y 1.000 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/delfin.jpeg" alt="Delfín del Río Iténez">
+      <div class="info">
+        <h2>Delfín del Río Iténez (Inia boliviensis)</h2>
+        <p><b>Hábitat:</b> Cuenca del río Iténez y afluentes amazónicos.<br>
+        <b>Amenazas principales:</b> Contaminación y represas fluviales.<br>
+        <b>Medidas de conservación:</b> Control de contaminación y educación ambiental.<br>
+        <b>Rol ecológico:</b> Regula poblaciones de peces.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Unos 900 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/monotiti.JPG" alt="Mono Titi del Beni">
+      <div class="info">
+        <h2>Mono Titi del Beni (Plecturocebus modestus)</h2>
+        <p><b>Hábitat:</b> Bosques tropicales del Beni.<br>
+        <b>Amenazas principales:</b> Agricultura y tráfico ilegal.<br>
+        <b>Medidas de conservación:</b> Protección de hábitat y educación comunitaria.<br>
+        <b>Rol ecológico:</b> Dispersor de semillas.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Menos de 500 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/llama.jpg" alt="Vicuña">
+      <div class="info">
+        <h2>Vicuña (Vicugna vicugna)</h2>
+        <p><b>Hábitat:</b> Altiplanos y páramos andinos.<br>
+        <b>Amenazas principales:</b> Caza ilegal y competencia con ganado.<br>
+        <b>Medidas de conservación:</b> Regulación del comercio de lana.<br>
+        <b>Rol ecológico:</b> Mantiene el equilibrio de los pastizales.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Aproximadamente 8.000 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/pumassss.jpg" alt="Puma">
+      <div class="info">
+        <h2>Puma (Puma concolor)</h2>
+        <p><b>Hábitat:</b> Desiertos, bosques y montañas.<br>
+        <b>Amenazas principales:</b> Caza por conflictos con ganaderos.<br>
+        <b>Medidas de conservación:</b> Control de caza y conservación de presas.<br>
+        <b>Rol ecológico:</b> Depredador que regula herbívoros.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Entre 2.000 y 2.500 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/descarga.jpeg" alt="Tatú Gigante">
+      <div class="info">
+        <h2>Tatú Gigante (Priodontes maximus)</h2>
+        <p><b>Hábitat:</b> Bosques húmedos y sabanas.<br>
+        <b>Amenazas principales:</b> Caza y destrucción de su hábitat.<br>
+        <b>Medidas de conservación:</b> Protección de bosques amazónicos.<br>
+        <b>Rol ecológico:</b> Aireador natural del suelo.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Menos de 400 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/murcielagon.jpg" alt="Murciélago Orejón de Bolivia">
+      <div class="info">
+        <h2>Murciélago Orejón de Bolivia (Histiotus laephotis)</h2>
+        <p><b>Hábitat:</b> Bosques secos interandinos.<br>
+        <b>Amenazas principales:</b> Deforestación y pesticidas.<br>
+        <b>Medidas de conservación:</b> Conservación de refugios naturales.<br>
+        <b>Rol ecológico:</b> Controlador de insectos.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Menos de 300 individuos.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/capibara.webp" alt="Capibara">
+      <div class="info">
+        <h2>Capibara (Hydrochoerus hydrochaeris)</h2>
+        <p><b>Hábitat:</b> Zonas húmedas y ribereñas.<br>
+        <b>Amenazas principales:</b> Pérdida de hábitat y caza por su carne.<br>
+        <b>Medidas de conservación:</b> Áreas protegidas y control de caza.<br>
+        <b>Rol ecológico:</b> Herbívoro que controla vegetación acuática.<br>
+        <b>Ejemplares estimados en Bolivia:</b> Cerca de 1.800 individuos.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Proyecto Educativo – Mamíferos en Peligro de Extinción en Bolivia
+  </footer>
+</body>
+</html>

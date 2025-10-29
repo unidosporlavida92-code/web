@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animales en Peligro de Extinción</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #e8f6f3;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(to right, #000000, #1abc9c);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 3em; }
+
+        nav {
+            background-color: #1abc9c;
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+            padding: 10px 20px; position: sticky; top: 0; z-index: 1000;
+        }
+        .menu-links { display: flex; gap: 15px; list-style: none; position: relative; }
+        nav a {
+            color: white; text-decoration: none; padding: 10px 15px;
+            font-weight: bold; transition: background 0.3s;
+        }
+        nav a:hover { background-color: #16a085; border-radius: 5px; }
+
+        /* ===== Menú desplegable ===== */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #16a085;
+            min-width: 180px;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1001;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+        }
+        .dropdown-content a:hover {
+            background-color: #149174;
+            border-radius: 0;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .search-bar { display: flex; align-items: center; }
+        .search-bar input[type="text"] {
+            padding: 7px 10px; border: none; border-radius: 4px; outline: none;
+        }
+        .search-bar button {
+            padding: 7px 10px; margin-left: 5px; background-color: #16a085;
+            border: none; color: white; border-radius: 4px; cursor: pointer;
+        }
+        .search-bar button:hover { background-color: #149174; }
+
+        section { padding: 50px 20px; max-width: 1000px; margin: auto; }
+        section h2 { font-size: 2em; margin-bottom: 20px; color: #16a085; }
+        ul { list-style: square; margin-left: 20px; }
+
+        .banner {
+            background-image: url('https://www.shutterstock.com/shutterstock/photos/2477932465/display_1500/stock-vector-seamless-vector-evening-tropical-rainforest-jungle-background-with-tiger-cobra-elephant-peafowl-2477932465.jpg');
+            background-size: cover; background-position: center;
+            height: 300px; color: white; display: flex; align-items: center;
+            justify-content: center; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .banner h2 { font-size: 2.5em; text-align: center; }
+
+        .info-box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .info-box img {
+            width: 50%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .info-text {
+            width: 50%;
+            padding: 20px;
+        }
+        .info-text h3 {
+            color: #1abc9c;
+            margin-bottom: 10px;
+        }
+        .info-text p {
+            margin-bottom: 10px;
+        }
+
+        .img-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .img-row img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 700px) {
+            .info-box { flex-direction: column; }
+            .info-box img, .info-text { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>UNIDOS POR LA VIDA</h1>
+    <p>Juntos podemos proteger la vida salvaje</p>
+</header>
+
+<nav>
+    <ul class="menu-links">
+        <li class="dropdown">
+            <a href="pruebas2.html">Clasificación ▾</a>
+            <div class="dropdown-content">
+                <a href="MAMIFEROS.html">Mamiferos</a>
+                <a href="PECES.html">Peces</a>
+                <a href="REPTILES.html">Reptiles</a>
+                <a href="AVES.html">Aves</a>
+            </div>
+        </li>
+        <li><a href="denuncias.html">Denuncias</a></li>
+        <li><a href="como ayudar.html">Cómo ayudar</a></li>
+        <li><a href="valor cultural.html">Valor cultural de las especies </a></li>
+        <li><a href="galeria.html">Galería de imagenes  </a></li>
+    </ul>
+    <form class="search-bar" onsubmit="return false;">
+        <input type="text" placeholder="Buscar..." name="buscar">
+        <button type="submit">🔍</button>
+    </form>
+</nav>
+
+<div class="banner">
+    <h2>¡Protege a los que no tienen voz!</h2>
+</div>
+
+<section id="introduccion">
+    <h2>Introducción</h2>
+    <p>
+        Los animales en peligro de extinción forman parte esencial del equilibrio natural y reflejan la riqueza de la biodiversidad de nuestro planeta. 
+        Su desaparición afecta directamente a los ecosistemas, alterando cadenas alimenticias y provocando cambios irreversibles en el clima y los hábitats.
+    </p>
+    <p>
+        En Bolivia y el mundo, muchas especies como el jaguar, el cóndor andino y el delfín rosado enfrentan un futuro incierto debido a la caza, la tala indiscriminada y la contaminación. 
+        La concienciación y educación ambiental son herramientas clave para revertir esta situación.
+    </p>
+    <div class="img-row">
+        <img src="imagenes/lobo-de-crin.jpg" alt="Llama">
+        <img src="imagenes/murcielagon.jpg" alt="Jaguar">
+        <img src="imagenes/guacamyo.jpeg" alt="Delfín rosado">
+    </div>
+</section>
+
+<section id="clasificacion">
+    <h2>Clasificación de los Animales en Peligro</h2>
+
+    <div class="info-box" id="vulnerable">
+        <img src="imagenes/capibara.webp" alt="Tapir Andino">
+        <div class="info-text">
+            <h3>Vulnerable</h3>
+            <p>Estas especies aún mantienen poblaciones estables, pero enfrentan amenazas crecientes. Si las condiciones ambientales o humanas no mejoran, podrían pasar a un estado más crítico.</p>
+            <p><strong>Ejemplos:</strong> Tapir Andino, Guacamayo Azul, Flamenco Andino y el Antílope Saiga.</p>
+            <p>Sus amenazas incluyen la tala de bosques, incendios forestales y la pérdida de fuentes de alimento.</p>
+        </div>
+    </div>
+
+    <div class="info-box" id="peligro">
+        <div class="info-text">
+            <h3> En peligro</h3>
+            <p>Son animales con un riesgo muy alto de extinción en un futuro cercano. Las principales causas son la caza furtiva, el tráfico ilegal y la destrucción de su entorno natural.</p>
+            <p><strong>Ejemplos:</strong> Jaguar, Oso Andino, Lobo de Crin, Delfín Rosado y Elefante Africano.</p>
+            <p>Estas especies requieren planes de protección activa y reservas naturales para sobrevivir.</p>
+        </div>
+            <img src="imagenes/Jaguar.webp" alt="Jaguar">
+    </div>
+
+    <div class="info-box" id="critico">
+        <img src="imagenes/delfin.jpeg" alt="Delfin Rosado">
+        <div class="info-text">
+            <h3>En peligro crítico</h3>
+            <p>Son especies que podrían desaparecer completamente en las próximas décadas si no se actúa con urgencia. Su número es muy reducido y su hábitat está gravemente dañado.</p>
+            <p><strong>Ejemplos:</strong> Tortuga Verde, Rinoceronte de Sumatra, Tigre de Bengala y Gorila de Montaña.</p>
+            <p>Las principales amenazas son el cambio climático, el comercio ilegal y la pérdida de hábitats.</p>
+        </div>
+    </div>
+
+    <div class="info-box" id="extintas">
+        <div class="info-text">
+            <h3> Extintas en estado silvestre</h3>
+            <p>Estas especies solo sobreviven en cautiverio o programas de conservación. Han desaparecido de su entorno natural debido a la acción humana.</p>
+            <p><strong>Ejemplo:</strong> Guacamayo de Spix, especie que fue reintroducida recientemente en Brasil mediante programas de reproducción controlada.</p>
+        </div>
+        <img src="imagenes/guacamayo-azul.jpg" alt="Guacamayo de Spix">
+    </div>
+
+  
+</section>
+
+
+<section id="como-ayudar">
+    <h2>¿Cómo puedes ayudar?</h2>
+    <p>
+      Cuidar la vida silvestre está en nuestras manos. Cada acción, por pequeña que parezca, puede contribuir a la protección de especies que hoy están en riesgo. 
+      La educación, el compromiso y la empatía son las herramientas más poderosas para generar un cambio real.
+    </p>
+  
+    <div class="info-box">
+      <img src="imagenes/reforestacion.jpg" alt="Reforestación">
+      <div class="info-text">
+        <h3>🌱 Participa en campañas de reforestación</h3>
+        <p>
+          Los árboles son el hogar de miles de especies animales. Participar en jornadas de reforestación ayuda a restaurar ecosistemas, proteger cuencas hídricas y mantener el equilibrio del clima.
+        </p>
+        <p><strong>Consejo:</strong> planta árboles nativos de tu región y evita especies exóticas invasoras.</p>
+      </div>
+    </div>
+  
+    <div class="info-box">
+      <div class="info-text">
+        <h3>🚫 No compres ni apoyes el tráfico ilegal de fauna</h3>
+        <p>
+          Cada vez que alguien compra un animal silvestre, contribuye al sufrimiento de miles de especies que son sacadas de su hábitat natural. 
+          Rechaza la compra de aves exóticas, tortugas o felinos como mascotas.
+        </p>
+        <p><strong>Dato:</strong> el tráfico ilegal de animales es el tercer negocio ilícito más rentable del mundo, después de las drogas y las armas.</p>
+      </div>
+      <img src="imagenes/trafico.jpg" alt="Tráfico ilegal de fauna">
+    </div>
+  
+    <div class="info-box">
+      <img src="imagenes/Educacion_Ambiental_ninos.jpg" alt="Educación ambiental">
+      <div class="info-text">
+        <h3>📚 Educa y comparte conocimiento</h3>
+        <p>
+          Informar a otros sobre la importancia de la biodiversidad multiplica el impacto positivo. 
+          Promueve actividades educativas, talleres o exposiciones que inspiren a cuidar nuestro entorno.
+        </p>
+        <p><strong>Ejemplo:</strong> organiza charlas o ferias ambientales en tu escuela o comunidad.</p>
+      </div>
+    </div>
+  
+    
+  
+
+    <div class="img-row">
+      <img src="imagenes/reforestacion.jpg" alt="Jóvenes plantando árboles">
+      <img src="imagenes/Educacion_Ambiental_ninos.jpg" alt="Estudiantes aprendiendo sobre biodiversidad">
+      <img src="imagenes/lago.jpg" alt="Reciclaje y sostenibilidad">
+    </div>
+  </section>
+
+<footer>
+    <p>&copy; 2025 - Vida Salvaje. Todos los derechos reservados.</p>
+    <p>Encuéntranos como <strong>UNIDOS POR LA VIDA</strong></p>
+    <p>📍 Dirección: Av. Ecológica #345, La Paz - Bolivia</p>
+    <p>📞 Teléfono: +591 765-43210 | ✉️ Email: contacto@unidospolavida.org</p>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><img src="imagenes/facebook.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="imagenes/instagram.png" alt="Instagram"></a>
+        <a href="https://www.twitter.com" target="_blank"><img src="imagenes/twitter.png" alt="Twitter"></a>
+        <a href="https://www.youtube.com" target="_blank"><img src="imagenes/youtube.png" alt="YouTube"></a>
+    </div>
+    <p>Síguenos en nuestras redes sociales para conocer proyectos, campañas y actividades ambientales.</p>
+</footer>
+</body>
+</html>

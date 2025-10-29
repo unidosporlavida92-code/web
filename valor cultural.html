@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valor Cultural de las Especies en Peligro de Extinción</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde: #000000;
+      --amarillo: #137468;
+      --beige: #5b8e81;
+      --gris: #829fa7;
+      --blanco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--beige);
+      color: var(--gris);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--verde), var(--amarillo));
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1100px;
+      margin: 60px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    section {
+      background: var(--blanco);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    section h2 {
+      color: var(--verde);
+      margin-bottom: 10px;
+    }
+
+    section p {
+      text-align: justify;
+      color: #555;
+    }
+
+    .imagenes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .imagenes img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .boton-regresar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--verde);
+      color: white;
+      font-weight: bold;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+
+    .boton-regresar:hover {
+      background-color: #2ecc71;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #2d3436;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 70px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .imagenes img {
+        width: 100%;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="boton-regresar">⬅️ Regresar</a>
+
+  <header>
+    <h1>Valor Cultural de las Especies en Peligro de Extinción</h1>
+    <p>La fauna boliviana no solo es riqueza biológica, sino también herencia espiritual y cultural que forma parte de la identidad de nuestros pueblos.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>La conexión entre cultura y naturaleza</h2>
+      <p>En Bolivia, los animales tienen un valor simbólico profundo dentro de las comunidades originarias. Representan fuerzas espirituales, guardianes de la vida y mensajeros de la naturaleza. Su desaparición no solo afecta al equilibrio ecológico, sino también a la memoria y espiritualidad de los pueblos que los veneran.</p>
+      <div class="imagenes">
+        <img src="imagenes/anguila.jfif" alt="Cóndor Andino">
+        <img src="imagenes/lion.jpg" alt="Jaguar">
+      </div>
+    </section>
+
+    <section>
+      <h2>El Cóndor Andino: mensajero del cielo</h2>
+      <p>Para las culturas andinas, el <b>Cóndor</b> es un símbolo sagrado que representa la conexión entre el mundo terrenal y el espiritual. Se lo considera el mensajero del sol y guardián de los espíritus. Su conservación simboliza el respeto a la vida y al equilibrio entre los tres mundos: el hanan pacha (cielo), kay pacha (tierra) y uku pacha (mundo interior).</p>
+      <div class="imagenes">
+        <img src="imagenes/ccondor.jpg" alt="Cóndor">
+      </div>
+    </section>
+
+    <section>
+      <h2>El Jaguar: guardián de la selva</h2>
+      <p>En la cosmovisión amazónica, el <b>Jaguar</b> es el protector del bosque y un símbolo de fuerza y sabiduría. Diversos pueblos indígenas creen que los chamanes pueden adoptar su espíritu durante los rituales para comunicarse con la selva. Su desaparición representa la pérdida de un guía espiritual y del respeto por la selva madre.</p>
+      <div class="imagenes">
+        <img src="imagenes/Jaguar.webp" alt="Jaguar">
+      </div>
+    </section>
+
+    <section>
+      <h2>El Guacamayo: voz de los bosques</h2>
+      <p>El <b>Guacamayo Azulamarillo</b> es considerado el mensajero de la alegría y la armonía. Su canto colorido y su plumaje brillante han inspirado danzas y tejidos en las culturas de tierras bajas. En muchas comunidades, sus plumas se utilizan en rituales para pedir fertilidad y abundancia.</p>
+      <div class="imagenes">
+        <img src="imagenes/guacamayu azul.webp" alt="Guacamayo">
+      </div>
+    </section>
+
+    <section>
+      <h2>El Suri y la sabiduría de los Andes</h2>
+      <p>El <b>Suri</b> (ñandú andino) es símbolo de paciencia y sabiduría en la cosmovisión aymara. Representa el vínculo entre el ser humano y la Pachamama. Su caza desmedida y la pérdida de su hábitat han puesto en riesgo no solo a la especie, sino también a la tradición de respeto hacia la naturaleza.</p>
+      <div class="imagenes">
+        <img src="imagenes/ñsmndu.jpg" alt="Suri">
+      </div>
+    </section>
+
+    <section>
+      <h2>La importancia del valor cultural</h2>
+      <p>Conservar las especies no solo es proteger la biodiversidad, sino también mantener viva la identidad y la sabiduría ancestral de los pueblos bolivianos. Cada animal es una lección de equilibrio, respeto y conexión espiritual con la Tierra.</p>
+      <p>Preservar su existencia significa preservar la memoria colectiva de una nación que entiende que la vida es sagrada en todas sus formas.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Proyecto Educativo “Unidos por la Vida” – Valor Cultural de las Especies en Peligro de Extinción
+  </footer>
+</body>
+</html>

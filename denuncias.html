@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Denuncias — Animales en Peligro de Extinción (Bolivia)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#16a085;
+      --accent-2:#0984e3;
+      --bg:#f5f7fa;
+      --card:#ffffff;
+      --text:#233044;
+      --muted:#6b7280;
+      --danger:#ef4444;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:'Poppins',sans-serif;
+      margin:0;
+      background:linear-gradient(180deg,#f8fbfc, var(--bg));
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:60px;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+    }
+
+    header{
+      background:linear-gradient(90deg,var(--accent-2),var(--accent));
+      color:white;
+      padding:40px 20px;
+      text-align:center;
+      box-shadow:0 6px 18px rgba(10,20,30,0.12);
+    }
+    header h1{font-size:1.9rem; margin-bottom:6px}
+    header p{opacity:.95; margin-top:6px}
+
+    main{
+      width:95%;
+      max-width:1100px;
+      margin:30px auto 0;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:start;
+    }
+
+    /* Form column */
+    .panel{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:0 8px 24px rgba(12,20,30,0.06);
+    }
+    .panel h2{margin:0 0 10px; font-size:1.15rem; color:var(--accent-2)}
+    .panel p.lead{color:var(--muted); margin-bottom:16px; font-size:0.95rem}
+
+    form .row{display:flex; gap:12px; margin-bottom:12px}
+    form label{font-size:0.85rem; color:var(--muted); display:block; margin-bottom:6px}
+    input[type="text"], input[type="email"], select, textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid #e6eef2;
+      background:#fbfeff;
+      font-size:0.95rem;
+      color:var(--text);
+    }
+    textarea{min-height:120px; resize:vertical}
+    .small{font-size:0.82rem; color:var(--muted); margin-top:6px}
+
+    .controls{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    button.btn{
+      background:var(--accent);
+      color:white;
+      border:none;
+      padding:10px 14px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+      transition:transform .12s ease, box-shadow .12s;
+    }
+    button.btn.secondary{background:#2d3748}
+    button.btn:active{transform:translateY(1px)}
+    button.flat{background:transparent; color:var(--accent-2); border:1px solid transparent}
+
+    .note{
+      background:#fff9e6;
+      border:1px solid #fde3b4;
+      padding:10px 12px;
+      border-radius:8px;
+      margin-top:12px;
+      color:#6b4a05;
+      font-size:0.9rem;
+    }
+
+    /* Preview image box */
+    .img-preview{
+      width:100%;
+      height:160px;
+      border-radius:10px;
+      overflow:hidden;
+      background:linear-gradient(90deg,#eef7f5,#f8fbff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px dashed #e1eef0;
+      color:var(--muted);
+      margin-top:8px;
+    }
+    .img-preview img{max-width:100%; max-height:100%; object-fit:cover}
+
+    /* List column */
+    .list-panel{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 8px 24px rgba(12,20,30,0.06);
+      max-height: calc(100vh - 200px);
+      overflow:auto;
+    }
+    .list-panel h3{margin:0 0 10px; color:var(--accent)}
+    .controls-top{display:flex; gap:8px; margin-bottom:8px; align-items:center; justify-content:space-between}
+    .search{flex:1; margin-right:8px}
+    .search input{
+      width:100%; padding:8px 10px; border-radius:8px; border:1px solid #e6eef2;
+      background:#fbfeff;
+    }
+
+    /* report card */
+    .report{
+      display:flex; gap:12px; align-items:flex-start; padding:12px; border-radius:12px;
+      border:1px solid #eef6f7; margin-bottom:12px;
+    }
+    .report .thumb{
+      width:98px; height:84px; border-radius:8px; overflow:hidden; background:#f2f6f7; flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;color:var(--muted); font-size:0.9rem;
+    }
+    .report .meta{flex:1}
+    .report h4{margin:0 0 4px; font-size:1rem}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:6px}
+    .tag{background:#edf8f7; color: #05635b; padding:4px 8px; border-radius:999px; font-size:0.78rem; font-weight:600}
+    .loc{font-size:0.82rem; color:var(--muted); margin-bottom:6px}
+    .desc{font-size:0.92rem; color:#344148; text-align:justify}
+    .report .actions{display:flex; gap:8px; margin-left:8px}
+    .small-action{background:transparent; border:1px solid #e6eef2; padding:6px 8px; border-radius:8px; color:var(--muted); cursor:pointer; font-size:0.85rem}
+
+    .empty{padding:20px; text-align:center; color:var(--muted)}
+
+    footer{
+      margin-top:30px;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.9rem;
+      padding:18px 12px;
+    }
+
+    @media (max-width:980px){
+      main{grid-template-columns:1fr; padding:0 12px}
+      .list-panel{order:2}
+    }
+
+
+    .boton-regresar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--azul);
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+
+    .boton-regresar:hover {
+      background-color: #74b9ff;
+      transform: scale(1.05);
+    }
+ .boton-regresar {
+        top: 15px;
+        left: 15px;
+        padding: 8px 15px;
+      }
+
+
+
+  </style>
+</head>
+
+<body>
+ 
+  <a href="index.html" class="boton-regresar">⬅️ Regresar</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+  <header>
+    <h1>Denuncias & Opiniones — Animales en Peligro (Bolivia)</h1>
+    <p>Deja tu denuncia o comentario. Toda información es valiosa para proteger especies en riesgo.</p>
+  </header>
+
+  <main>
+    <!-- Form column -->
+    <section class="panel" aria-labelledby="form-title">
+      <h2 id="form-title">Registrar denuncia / opinión</h2>
+      <p class="lead">Completa los datos lo más posible. La foto es opcional (se guarda localmente en tu navegador).</p>
+
+      <form id="denunciaForm" autocomplete="off" novalidate>
+        <div class="row" style="flex-direction:column">
+          <label for="nombre">Nombre (opcional)</label>
+          <input type="text" id="nombre" placeholder="Tu nombre o anonimato (ej: 'Vecina de Rurrenabaque')">
+        </div>
+
+        <div class="row">
+          <div style="flex:1">
+            <label for="email">Email (opcional)</label>
+            <input type="email" id="email" placeholder="tu@correo.com">
+            <div class="small">Usaremos este correo solo para contactar si necesitas seguimiento.</div>
+          </div>
+
+          <div style="width:160px">
+            <label for="categoria">Categoría</label>
+            <select id="categoria" required>
+              <option value="Mamíferos">Mamíferos</option>
+              <option value="Aves">Aves</option>
+              <option value="Reptiles">Reptiles</option>
+              <option value="Peces">Peces</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div style="flex:1">
+            <label for="especie">Especie / Nombre</label>
+            <input type="text" id="especie" placeholder="Ej: Jaguar (Panthera onca)" required>
+          </div>
+          <div style="width:160px">
+            <label for="ubicacion">Ubicación</label>
+            <input type="text" id="ubicacion" placeholder="Departamento / Lugar">
+          </div>
+        </div>
+
+        <div class="row" style="flex-direction:column">
+          <label for="descripcion">Descripción de la denuncia / opinión</label>
+          <textarea id="descripcion" placeholder="Describe lo ocurrido: fecha, número de animales, pruebas, comportamiento, responsables, etc." required></textarea>
+          <div class="small">Cuenta clara, fechas y lugares ayudan a la gestión. Evita difamación: no publiques datos personales sensibles.</div>
+        </div>
+
+        <div class="row" style="align-items:center;">
+          <div style="flex:1">
+            <label for="foto">Foto / evidencia (opcional)</label>
+            <input type="file" id="foto" accept="image/*">
+            <div class="img-preview" id="imgPreview">Sin imagen</div>
+          </div>
+          <div style="width:120px; display:flex;flex-direction:column; align-items:flex-end; gap:8px;">
+            <label style="visibility:hidden">guardar</label>
+            <button type="submit" class="btn" title="Registrar denuncia">Enviar denuncia</button>
+            <button type="button" id="limpiarForm" class="btn secondary" title="Limpiar formulario">Limpiar</button>
+          </div>
+        </div>
+
+        <div class="note">
+          <strong>Nota de moderación:</strong> Las denuncias enviadas aquí se almacenan localmente en tu navegador. Para gestión oficial o seguimiento, contacta a las autoridades ambientales locales. Esta herramienta es para recopilación comunitaria.
+        </div>
+      </form>
+    </section>
+
+    <!-- List / panel -->
+    <aside class="list-panel" aria-labelledby="list-title">
+      <div class="controls-top">
+        <div style="display:flex; align-items:center; gap:8px; width:100%;">
+          <div class="search" style="flex:1"><input id="buscador" placeholder="Buscar por especie, ubicación o categoría..."></div>
+          <select id="filtroCategoria" style="width:170px; padding:8px; border-radius:8px; border:1px solid #e6eef2;">
+            <option value="">Filtrar por categoría</option>
+            <option value="Mamíferos">Mamíferos</option>
+            <option value="Aves">Aves</option>
+            <option value="Reptiles">Reptiles</option>
+            <option value="Peces">Peces</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div style="display:flex; gap:6px; margin-left:8px;">
+          <button id="exportCsv" class="btn flat" title="Exportar todas las denuncias a CSV">Exportar CSV</button>
+          <button id="clearAll" class="btn" style="background:var(--danger)">Borrar todas</button>
+        </div>
+      </div>
+
+      <h3 id="list-title">Denuncias recientes</h3>
+      <div id="listaDenuncias" aria-live="polite">
+        <div class="empty">No hay denuncias aún. Sé el primero en informar.</div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <div>© 2025 Comunidad — Protección de Especies. Diseñado para recopilación ciudadana.</div>
+    <div style="margin-top:6px; font-size:0.85rem; color:var(--muted)">No reemplaza canales oficiales. Para emergencias ambientales contacta a la autoridad local.</div>
+  </footer>
+
+  <script>
+    // Key for localStorage
+    const STORAGE_KEY = 'denuncias_animales_bolivia_v1';
+    const form = document.getElementById('denunciaForm');
+    const fotoInput = document.getElementById('foto');
+    const imgPreview = document.getElementById('imgPreview');
+    const listaEl = document.getElementById('listaDenuncias');
+    const limpiarBtn = document.getElementById('limpiarForm');
+    const buscador = document.getElementById('buscador');
+    const filtroCategoria = document.getElementById('filtroCategoria');
+    const exportCsvBtn = document.getElementById('exportCsv');
+    const clearAllBtn = document.getElementById('clearAll');
+
+    let imageDataUrl = null;
+
+    // Load existing denuncias
+    function loadDenuncias(){
+      const raw = localStorage.getItem(STORAGE_KEY);
+      try{
+        return raw ? JSON.parse(raw) : [];
+      }catch(e){
+        console.error('Error parseando storage', e);
+        return [];
+      }
+    }
+    function saveDenuncias(list){
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    }
+
+    // Render list (with optional filter)
+    function renderList(){
+      const all = loadDenuncias();
+      const q = (buscador.value||'').toLowerCase().trim();
+      const catFilter = filtroCategoria.value;
+      const filtered = all.filter(item => {
+        if(catFilter && item.categoria !== catFilter) return false;
+        if(!q) return true;
+        const hay = [
+          item.especie, item.descripcion, item.ubicacion, item.nombre, item.categoria
+        ].join(' ').toLowerCase();
+        return hay.includes(q);
+      });
+
+      listaEl.innerHTML = '';
+      if(filtered.length === 0){
+        listaEl.innerHTML = '<div class="empty">No se encontraron denuncias con esos filtros.</div>';
+        return;
+      }
+
+      // Show newest first
+      filtered.slice().reverse().forEach((r, idx) => {
+        const node = document.createElement('div');
+        node.className = 'report';
+        node.innerHTML = `
+          <div class="thumb">${r.foto ? `<img src="${r.foto}" alt="evidencia">` : '<span style="padding:8px">Sin foto</span>'}</div>
+          <div class="meta">
+            <h4>${escapeHtml(r.especie)} <span style="font-weight:600; color:#9aa7ad; font-size:0.9rem">· ${timeAgo(r.fecha)}</span></h4>
+            <div class="tags"><div class="tag">${escapeHtml(r.categoria)}</div>${r.nombre ? `<div class="tag" title="Reportante">${escapeHtml(short(r.nombre,18))}</div>` : ''}</div>
+            <div class="loc">${escapeHtml(r.ubicacion || 'Ubicación no especificada')}</div>
+            <div class="desc">${escapeHtml(r.descripcion)}</div>
+          </div>
+          <div class="actions" style="display:flex;flex-direction:column; align-items:flex-end;">
+            <button class="small-action" data-index="${r.id}" onclick="markResolved(event)">Marcar resuelta</button>
+            <button class="small-action" data-index="${r.id}" onclick="deleteOne(event)" style="margin-top:8px">Eliminar</button>
+          </div>
+        `;
+        listaEl.appendChild(node);
+      });
+    }
+
+    // Utilities
+    function escapeHtml(str){
+      if(!str) return '';
+      return String(str)
+        .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
+        .replaceAll('"','&quot;').replaceAll("'","&#039;");
+    }
+    function short(s, n){ return s && s.length>n ? s.slice(0,n-1)+'…' : s; }
+    function uid(){ return 'id_' + Date.now() + '_' + Math.floor(Math.random()*9999); }
+    function timeAgo(ts){
+      const d = new Date(ts);
+      const diff = Math.floor((Date.now()-d)/1000);
+      if(diff < 60) return `${diff}s`;
+      if(diff < 3600) return `${Math.floor(diff/60)}m`;
+      if(diff < 86400) return `${Math.floor(diff/3600)}h`;
+      const days = Math.floor(diff/86400);
+      return `${days}d`;
+    }
+
+    // Image preview
+    fotoInput.addEventListener('change', (e)=>{
+      const file = e.target.files[0];
+      if(!file){ imageDataUrl = null; imgPreview.innerHTML = 'Sin imagen'; return; }
+      if(file.size > 2_000_000){ // ~2MB
+        alert('La imagen es muy grande. Elija una menor a 2 MB para mejor rendimiento.');
+      }
+      const reader = new FileReader();
+      reader.onload = ()=> {
+        imageDataUrl = reader.result;
+        imgPreview.innerHTML = `<img src="${imageDataUrl}" alt="preview">`;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Submit form
+    form.addEventListener('submit', (ev)=>{
+      ev.preventDefault();
+      // basic validation
+      const especie = document.getElementById('especie').value.trim();
+      const descripcion = document.getElementById('descripcion').value.trim();
+      const categoria = document.getElementById('categoria').value;
+      if(!especie || !descripcion){
+        alert('Por favor completa la especie y la descripción.');
+        return;
+      }
+      const nueva = {
+        id: uid(),
+        nombre: document.getElementById('nombre').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        categoria,
+        especie,
+        ubicacion: document.getElementById('ubicacion').value.trim(),
+        descripcion,
+        foto: imageDataUrl || null,
+        fecha: new Date().toISOString(),
+        resuelta: false
+      };
+      const list = loadDenuncias();
+      list.push(nueva);
+      saveDenuncias(list);
+      form.reset();
+      imageDataUrl = null;
+      imgPreview.innerHTML = 'Sin imagen';
+      renderList();
+      alert('Denuncia registrada localmente. Gracias por reportar.');
+    });
+
+    limpiarBtn.addEventListener('click', ()=>{ if(confirm('Limpiar el formulario?')) { form.reset(); imageDataUrl = null; imgPreview.innerHTML = 'Sin imagen'; } });
+
+    // Search and filters
+    buscador.addEventListener('input', renderList);
+    filtroCategoria.addEventListener('change', renderList);
+
+    // Delete and resolve handlers (delegation via inline onclick above)
+    window.deleteOne = function(ev){
+      const id = ev.currentTarget.getAttribute('data-index');
+      if(!confirm('Eliminar esta denuncia?')) return;
+      let arr = loadDenuncias();
+      arr = arr.filter(x => x.id !== id);
+      saveDenuncias(arr);
+      renderList();
+    };
+
+    window.markResolved = function(ev){
+      const id = ev.currentTarget.getAttribute('data-index');
+      let arr = loadDenuncias();
+      const idx = arr.findIndex(x => x.id === id);
+      if(idx === -1) return;
+      const item = arr[idx];
+      if(item.resuelta){
+        alert('Esta denuncia ya fue marcada como resuelta.');
+        return;
+      }
+      if(!confirm('Marcar como resuelta?')) return;
+      arr[idx].resuelta = true;
+      saveDenuncias(arr);
+      renderList();
+    };
+
+    // Export CSV
+    exportCsvBtn.addEventListener('click', ()=>{
+      const arr = loadDenuncias();
+      if(!arr.length){ alert('No hay denuncias para exportar.'); return; }
+      const headers = ['id','fecha','categoria','especie','ubicacion','nombre','email','descripcion','foto_base64','resuelta'];
+      const rows = arr.map(r => headers.map(h => {
+        let v = r[h] !== undefined ? r[h] : '';
+        // escape quotes and newlines
+        if(typeof v === 'string'){
+          v = v.replaceAll('"','""').replaceAll('\n',' ');
+        }
+        return `"${v}"`;
+      }).join(','));
+      const csv = [headers.join(','), ...rows].join('\n');
+      const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'denuncias_animales_bolivia.csv';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    // Clear all
+    clearAllBtn.addEventListener('click', ()=>{
+      if(!confirm('Borrar todas las denuncias guardadas localmente? Esta acción no se puede deshacer.')) return;
+      localStorage.removeItem(STORAGE_KEY);
+      renderList();
+    });
+
+    // initial render
+    renderList();
+
+    // small polyfill for replaceAll for older browsers
+    if(!String.prototype.replaceAll){
+      String.prototype.replaceAll = function(search, replace){
+        return this.split(search).join(replace);
+      };
+    }
+  </script>
+</body>
+</html>
+
+

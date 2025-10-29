@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galería de Especies en Peligro de Extinción</title>
+  <style>
+    :root{
+      --gap:16px;
+      --radius:12px;
+      --bg:#0f241c;
+      --card:#0b201b;
+      --accent:#06b6d4;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: 'Poppins', system-ui, sans-serif;
+      background:linear-gradient(180deg,#095548 0%, #04121a 100%);
+      color:#e6eef6;
+      padding:32px;
+    }
+
+    h1{margin:0 0 18px;font-size:clamp(18px,3vw,28px)}
+    p.lead{margin:0 0 24px;color:#b8d7e0}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+      gap:var(--gap);
+      align-items:stretch;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+      border-radius:var(--radius);
+      overflow:hidden;
+      position:relative;
+      cursor:pointer;
+      transition:transform .22s ease, box-shadow .22s ease;
+      box-shadow:0 6px 18px rgba(2,6,23,0.6);
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 14px 30px rgba(2,6,23,0.7);
+    }
+
+    .card img{width:100%;height:180px;object-fit:cover;display:block}
+    .caption{padding:10px 12px;font-size:14px;color:#d9eef7;text-align:center}
+
+    /* Modal / lightbox */
+    .lightbox{
+      position:fixed;inset:0;
+      display:flex;align-items:center;justify-content:center;
+      padding:24px;
+      background:rgba(2,6,23,0.78);
+      backdrop-filter:blur(6px);
+      opacity:0;visibility:hidden;
+      transition:opacity .18s ease, visibility .18s;
+      z-index:60;
+    }
+    .lightbox.open{opacity:1;visibility:visible}
+
+    .lightbox-content{
+      max-width:1100px;width:100%;max-height:92vh;
+      border-radius:12px;overflow:hidden;
+      display:flex;flex-direction:column;
+      background:linear-gradient(180deg,#071427,#02121a);
+    }
+    .lightbox-media{display:flex;align-items:center;justify-content:center;background:#04111a;padding:18px}
+    .lightbox-media img{max-width:100%;max-height:78vh;display:block;border-radius:6px}
+
+    .lightbox-info{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;color:#cfeff6}
+    .lightbox .close, .lightbox .nav{background:none;border:0;color:inherit;font-size:18px;padding:8px;border-radius:8px;cursor:pointer}
+    .lightbox .close:hover, .lightbox .nav:hover{background:rgba(255,255,255,0.03)}
+
+    .controls{display:flex;gap:8px;align-items:center}
+
+   
+    .boton-regresar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--verde);
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+
+    .boton-regresar:hover {
+      background-color: #2ecc71;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .animal {
+        flex-direction: column;
+      }
+      .animal img {
+        width: 100%;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="boton-regresar">⬅️ Regresar</a>
+
+  </style>
+</head>
+<body>
+  <header>
+  <main>
+    <h1>Galería de Especies en Peligro de Extinción</h1>
+    <p class="lead">Haz clic en una imagen para verla en tamaño completo. Usa las flechas o las teclas ← → para navegar y Esc para cerrar.</p>
+  </header>
+    <div class="gallery" id="gallery">
+   
+      <button class="card" data-index="0">
+        <img src="imagenes/anaconda.png" alt="Anaconda boliviana">
+        <div class="caption">Anaconda boliviana</div>
+      </button>
+
+      <button class="card" data-index="1">
+        <img src="imagenes/anguila.jfif" alt="Anguila boliviana">
+        <div class="caption">Anguila boliviana</div>
+      </button>
+
+      <button class="card" data-index="2">
+        <img src="imagenes/arawana.jpg" alt="Arawana">
+        <div class="caption">Arawana</div>
+      </button>
+
+      <button class="card" data-index="3">
+        <img src="imagenes/boa.jpeg" alt="Boa de las llanuras">
+        <div class="caption">Boa de las llanuras</div>
+      </button>
+
+      <button class="card" data-index="4">
+        <img src="imagenes/caiman paraguay.jpg" alt="Caimán del Paraguay">
+        <div class="caption">Caimán del Paraguay</div>
+      </button>
+
+      <button class="card" data-index="5">
+        <img src="imagenes/capibara.webp" alt="Capibara">
+        <div class="caption">Capibara</div>
+      </button>
+
+      <button class="card" data-index="6">
+        <img src="imagenes/ccondor.jpg" alt="Cóndor andino">
+        <div class="caption">Cóndor andino</div>
+      </button>
+
+      <button class="card" data-index="7">
+        <img src="imagenes/coliberio.jfif" alt="Colibrí de Cochabamba">
+        <div class="caption">Colibrí de Cochabamba</div>
+      </button>
+
+     
+      <button class="card" data-index="8">
+        <img src="imagenes/flamenco.webp" alt="Flamenco andino">
+        <div class="caption">Flamenco andino</div>
+      </button>
+
+      <button class="card" data-index="9">
+        <img src="imagenes/guacamayu azul.webp" alt="Guacamayo azulamarillo">
+        <div class="caption">Guacamayo azulamarillo</div>
+      </button>
+
+      <button class="card" data-index="10">
+        <img src="imagenes/Avestruz-Andino-2.jpg" alt="Avestruz andino (Suri)">
+        <div class="caption">Avestruz andino (Suri)</div>
+      </button>
+
+      <button class="card" data-index="11">
+        <img src="imagenes/lechuzon.jfif" alt="Lechuzón de campo">
+        <div class="caption">Lechuzón de campo</div>
+      </button>
+
+      <button class="card" data-index="12">
+        <img src="imagenes/lentes.jpg" alt="Loro (detalle) ">
+        <div class="caption">Loro - detalle</div>
+      </button>
+
+      <button class="card" data-index="13">
+        <img src="imagenes/lion.jpg" alt="Cachorro (imagen ilustrativa)">
+        <div class="caption">Cachorro (uso ilustrativo)</div>
+      </button>
+
+      <button class="card" data-index="14">
+        <img src="imagenes/llama.jpg" alt="Llama">
+        <div class="caption">Llama</div>
+      </button>
+
+      <button class="card" data-index="15">
+        <img src="imagenes/lobo-de-crin.jpg" alt="Lobo de crin">
+        <div class="caption">Lobo de crin</div>
+      </button>
+
+      <button class="card" data-index="16">
+        <img src="imagenes/loro frente azul.jpg" alt="Loro frente azul">
+        <div class="caption">Loro frente azul</div>
+      </button>
+
+      <button class="card" data-index="16">
+        <img src="imagenes/mono_ardilla.jpg" alt="Loro frente azul">
+        <div class="caption">Mono ardilla</div>
+      </button>
+
+      <button class="card" data-index="16">
+        <img src="imagenes/monotiti.JPG" alt="monotiti">
+        <div class="caption">monotiti</div>
+      </button>
+
+      <button class="card" data-index="16">
+        <img src="imagenes/murcielagon.jpg" alt="murcielagon">
+        <div class="caption">murcielagon</div>
+      </button>
+
+      <button class="card" data-index="16">
+        <img src="imagenes/ñsmndu.jpg" alt="Ñandu">
+        <div class="caption">Ñandu</div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/paraba.jpg" alt="Paraba frente roja">
+        <div class="caption">Paraba frente roja</div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/pato.jpg" alt="Pato Crestudo">
+        <div class="caption">Pato Crestudo</div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/pava.jpg" alt="Pava Copanani">
+        <div class="caption">Pava Copanani</div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/tucan.webp" alt="Tucan Toco">
+        <div class="caption">Tucan Toco</div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/gatooo.jpeg" alt="Señora del lago">
+        <div class="caption">Gato</div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/torrtua.jfif" alt="Tortuga">
+        <div class="caption">Tortuga</div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/Tapir.jpg" alt="tapir">
+        <div class="caption">Tapir</div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/taruca.jpg" alt="Taruca">
+        <div class="caption">Taruca</div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/trafico.jpg" alt="trafico">
+        <div class="caption">Trafico de animales </div>
+      </button>
+
+      <button class="card" data-index="16">
+        <img src="imagenes/serpiente coral.jfif" alt="trafico">
+        <div class="caption">Serpiente coral </div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/surubi.jfif" alt="trafico">
+        <div class="caption">Surubi </div>
+      </button>
+
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/pumassss.jpg" alt="">
+        <div class="caption">Pumas </div>
+      </button>
+
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/sabalo.webp" alt="trafico">
+        <div class="caption">Sabalo </div>
+      </button>
+
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/ioio.jpg" alt="trafico">
+        <div class="caption">Quirquicho </div>
+      </button>
+
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/lagarto del chao.jpeg" alt="trafico">
+        <div class="caption">Lagarto</div>
+      </button>
+
+
+      <button class="card" data-index="16">
+        <img src="imagenes/lagarto.jpg" alt="trafico">
+        <div class="caption">Dragon  </div>
+      </button>
+
+
+
+
+      
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="lightbox-content">
+        <div class="lightbox-media">
+          <button class="nav" id="prevBtn" aria-label="Anterior">◀</button>
+          <img id="lightboxImg" src="" alt="">
+          <button class="nav" id="nextBtn" aria-label="Siguiente">▶</button>
+        </div>
+        <div class="lightbox-info">
+          <div id="lightboxCaption">Caption</div>
+          <div class="controls">
+            <button class="close" id="closeBtn" aria-label="Cerrar">✕</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      const gallery = document.getElementById('gallery');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const caption = document.getElementById('lightboxCaption');
+      const closeBtn = document.getElementById('closeBtn');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      const cards = Array.from(gallery.querySelectorAll('.card'));
+      const images = cards.map(c => {
+        const img = c.querySelector('img');
+        return {src: img.src, alt: img.alt, caption: c.querySelector('.caption').textContent};
+      });
+
+      let current = 0;
+
+      function open(index){
+        const item = images[index];
+        current = index;
+        lightboxImg.src = item.src;
+        lightboxImg.alt = item.alt;
+        caption.textContent = item.caption;
+        lightbox.classList.add('open');
+        closeBtn.focus();
+      }
+
+      function close(){
+        lightbox.classList.remove('open');
+        lightboxImg.src = '';
+        lightboxImg.alt = '';
+      }
+
+      function showNext(delta){
+        current = (current + delta + images.length) % images.length;
+        const it = images[current];
+        lightboxImg.style.opacity = 0;
+        setTimeout(()=>{
+          lightboxImg.src = it.src;
+          lightboxImg.alt = it.alt;
+          caption.textContent = it.caption;
+          lightboxImg.style.opacity = 1;
+        },150);
+      }
+
+      cards.forEach((card, idx)=>{
+        card.addEventListener('click', ()=> open(idx));
+        card.addEventListener('keydown', e=>{
+          if(e.key==='Enter' || e.key===' ') {e.preventDefault(); open(idx);}
+        });
+      });
+
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', ()=> showNext(-1));
+      nextBtn.addEventListener('click', ()=> showNext(1));
+      lightbox.addEventListener('click', e=>{if(e.target===lightbox) close();});
+
+      document.addEventListener('keydown', e=>{
+        if(lightbox.classList.contains('open')){
+          if(e.key==='Escape') close();
+          if(e.key==='ArrowLeft') showNext(-1);
+          if(e.key==='ArrowRight') showNext(1);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

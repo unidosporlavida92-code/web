@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reptiles en Peligro de Extinción en Bolivia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde: #000000;
+      --naranja: #18956e;
+      --gris-fondo: #749c9b;
+      --texto: #2d3436;
+      --blanco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--gris-fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--verde), var(--naranja));
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1100px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .animal {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: var(--blanco);
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .animal:hover {
+      transform: translateY(-6px);
+    }
+
+    .animal img {
+      width: 45%;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .animal .info {
+      flex: 1;
+    }
+
+    .animal h2 {
+      color: var(--verde);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .animal p {
+      color: #636e72;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    .right {
+      flex-direction: row-reverse;
+    }
+
+    footer {
+      background: #2d3436;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    .boton-regresar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--verde);
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+
+    .boton-regresar:hover {
+      background-color: #2ecc71;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .animal {
+        flex-direction: column;
+      }
+      .animal img {
+        width: 100%;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="boton-regresar">⬅️ Regresar</a>
+
+  <header>
+    <h1>Reptiles en Peligro de Extinción en Bolivia</h1>
+    <p>Conoce los reptiles más amenazados que habitan en nuestro país, sus hábitats, amenazas y su rol en la naturaleza.</p>
+  </header>
+
+  <main>
+    <section class="animal">
+      <img src="imagenes/caiman paraguay.jpg" alt="Caimán del Paraguay">
+      <div class="info">
+        <h2>Caimán del Paraguay (Caiman yacare)</h2>
+        <p><b>Hábitat:</b> Ríos, lagunas y pantanos del oriente boliviano.<br>
+        <b>Amenazas principales:</b> Caza furtiva por su piel, destrucción de humedales y contaminación del agua.<br>
+        <b>Medidas de conservación:</b> Protección en reservas naturales, programas de reproducción y control de caza ilegal.<br>
+        <b>Rol ecológico:</b> Regula poblaciones de peces y mantiene el equilibrio de los ecosistemas acuáticos.<br>
+        <b>Ejemplares estimados:</b> Entre  15,000</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/tortuga.jpg" alt="Tortuga del Río Arica">
+      <div class="info">
+        <h2>Tortuga del Río Arica (Podocnemis expansa)</h2>
+        <p><b>Hábitat:</b> Ríos caudalosos y playas arenosas del norte amazónico.<br>
+        <b>Amenazas principales:</b> Recolección de huevos, caza y contaminación por residuos plásticos y mineros.<br>
+        <b>Medidas de conservación:</b> Protección de playas de anidación y campañas de educación ambiental.<br>
+        <b>Rol ecológico:</b> Contribuye a la dispersión de nutrientes y a la estabilidad de los ecosistemas acuáticos.<br>
+        <b>Ejemplares estimados:</b> Entre 8,000</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/boa.jpeg" alt="Boa de las Llanuras">
+      <div class="info">
+        <h2>Boa de las Llanuras (Boa constrictor occidentalis)</h2>
+        <p><b>Hábitat:</b> Zonas boscosas y sabanas húmedas del oriente y Chaco boliviano.<br>
+        <b>Amenazas principales:</b> Caza por su piel y muerte por miedo humano.<br>
+        <b>Medidas de conservación:</b> Educación para evitar su persecución y control del comercio ilegal.<br>
+        <b>Rol ecológico:</b> Controla poblaciones de roedores, ayudando al equilibrio del ecosistema.<br>
+        <b>Ejemplares estimados:</b> 20,000</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/lagarto.jpg" alt="Lagarto de Tucavaca">
+      <div class="info">
+        <h2>Lagarto de Tucavaca (Liolaemus sp.)</h2>
+        <p><b>Hábitat:</b> Bosques secos y serranías de Tucavaca, Santa Cruz.<br>
+        <b>Amenazas principales:</b> Incendios forestales, deforestación y expansión agrícola.<br>
+        <b>Medidas de conservación:</b> Protección del Área Natural de Manejo Integrado Tucavaca.<br>
+        <b>Rol ecológico:</b> Controla insectos y sirve de alimento a aves y serpientes.<br>
+        <b>Ejemplares estimados:</b> Aproximadamente 1,200</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/tortuga chaqueña.jpg" alt="Tortuga chaqueña">
+      <div class="info">
+        <h2>Tortuga Chaqueña (Chelonoidis chilensis)</h2>
+        <p><b>Hábitat:</b> Zonas áridas y semiáridas del Chaco boliviano.<br>
+        <b>Amenazas principales:</b> Caza, tráfico ilegal y quema de su hábitat.<br>
+        <b>Medidas de conservación:</b> Prohibición de captura y programas de reintroducción.<br>
+        <b>Rol ecológico:</b> Dispersa semillas y contribuye al ciclo de nutrientes del suelo.<br>
+        <b>Ejemplares estimados:</b> Alrededor 3,000</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/anaconda.png" alt="Anaconda boliviana">
+      <div class="info">
+        <h2>Anaconda Boliviana (Eunectes beniensis)</h2>
+        <p><b>Hábitat:</b> Ríos y pantanos del Beni y Pando.<br>
+        <b>Amenazas principales:</b> Pérdida de hábitat y caza ilegal.<br>
+        <b>Medidas de conservación:</b> Protección de humedales y monitoreo científico de poblaciones.<br>
+        <b>Rol ecológico:</b> Regula poblaciones de peces, aves y mamíferos pequeños.<br>
+        <b>Ejemplares estimados:</b> Entre 5,000</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/iguana veda.jfif" alt="Iguana verde">
+      <div class="info">
+        <h2>Iguana Verde (Iguana iguana)</h2>
+        <p><b>Hábitat:</b> Bosques tropicales y riberas húmedas del oriente boliviano.<br>
+        <b>Amenazas principales:</b> Tráfico ilegal y deforestación.<br>
+        <b>Medidas de conservación:</b> Protección legal y educación sobre su importancia ecológica.<br>
+        <b>Rol ecológico:</b> Dispersora de semillas y controladora de insectos.<br>
+        <b>Ejemplares estimados:</b>Aproximadamente 12,000</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/serpiente coral.jfif" alt="Serpiente coral">
+      <div class="info">
+        <h2>Serpiente Coral (Micrurus surinamensis)</h2>
+        <p><b>Hábitat:</b> Bosques amazónicos y zonas ribereñas.<br>
+        <b>Amenazas principales:</b> Deforestación y muerte por persecución humana.<br>
+        <b>Medidas de conservación:</b> Campañas educativas y protección de hábitats amazónicos.<br>
+        <b>Rol ecológico:</b> Controla poblaciones de anfibios y pequeños reptiles.<br>
+        <b>Ejemplares estimados:</b> Entre los 4,500</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/lagarto del chao.jpeg" alt="Lagarto del Chaco">
+      <div class="info">
+        <h2>Lagarto del Chaco (Tropidurus etheridgei)</h2>
+        <p><b>Hábitat:</b> Zonas áridas del Chaco y sabanas secas.<br>
+        <b>Amenazas principales:</b> Expansión agrícola e incendios forestales.<br>
+        <b>Medidas de conservación:</b> Protección de áreas chaqueñas y monitoreo de poblaciones.<br>
+        <b>Rol ecológico:</b> Controla poblaciones de insectos y sirve de presa a aves rapaces.<br>
+        <b>Ejemplares estimados:</b> Alrededor 2,300</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/torrtua.jfif" alt="Tortuga Amazónica">
+      <div class="info">
+        <h2>Tortuga Amazónica (Podocnemis unifilis)</h2>
+        <p><b>Hábitat:</b> Ríos amazónicos con playas arenosas.<br>
+        <b>Amenazas principales:</b> Caza, recolección de huevos y contaminación minera.<br>
+        <b>Medidas de conservación:</b> Programas de conservación de nidos y educación ambiental.<br>
+        <b>Rol ecológico:</b> Dispersa nutrientes y mantiene el equilibrio ecológico de los ecosistemas fluviales.<br>
+        <b>Ejemplares estimados:</b> Acerca 6,500</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Proyecto Educativo – Reptiles en Peligro de Extinción en Bolivia
+  </footer>
+</body>
+</html>

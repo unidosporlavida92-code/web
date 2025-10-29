@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animales en Peligro de Extinción en Bolivia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #00b894;
+      --bg: #f0f4f8;
+      --text: #0f1720;
+      --card-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Encabezado con degradado animado */
+    header {
+      width: 100%;
+      padding: 80px 20px;
+      color: white;
+      text-align: center;
+      background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+      background-size: 600% 600%;
+      animation: gradientShift 8s ease infinite;
+      box-shadow: 0 4px 15px var(--shadow);
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Tarjetas principales */
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 50px 40px;
+      width: 100%;
+      max-width: 1200px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(11, 22, 33, 0.08);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(11, 22, 33, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      filter: brightness(0.9);
+      transition: all 0.4s ease;
+    }
+
+    .card:hover img {
+      filter: brightness(1.05);
+      transform: scale(1.05);
+    }
+
+    .card h2 {
+      margin: 16px 0 6px;
+      font-size: 1.3rem;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      padding: 0 18px;
+      color: #475569;
+      margin-bottom: 22px;
+    }
+
+    .card button {
+      background: var(--accent);
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background: #019874;
+      transform: scale(1.07);
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Footer elegante */
+    footer {
+      text-align: center;
+      color: white;
+      padding: 25px 10px;
+      font-size: 0.95rem;
+      width: 100%;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      margin-top: auto;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Animales en Peligro de Extinción en Bolivia</h1>
+  </header>
+
+  <main>
+    <section class="card" onclick="openCategory('Mamíferos')">
+      <img src="imagenes/oso2.jpg" alt="Mamíferos">
+      <h2>Mamíferos</h2>
+      <p>Animales de sangre caliente con pelo o pelaje. Ejemplos: jaguar, delfín, oso.</p>
+      <button><a href="MAMIFEROS.html">Ver más</a></button>
+    </section>
+
+    <section class="card" onclick="openCategory('Peces')">
+      <img src="imagenes/karachi.jpg" alt="Peces">
+      <h2>Peces</h2>
+      <p>Viven principalmente en ambientes acuáticos y respiran por branquias.</p>
+      <button><a href="PECES.html">Ver más</a></button>
+    </section>
+
+    <section class="card" onclick="openCategory('Reptiles')">
+      <img src="imagenes/iiiii.jpg" alt="Reptiles">
+      <h2>Reptiles</h2>
+      <p>Animales de sangre fría, muchas especies tienen escamas. Ej.: serpientes, tortugas.</p>
+      <button><a href="REPTILES.html">Ver más</a></button>
+    </section>
+
+    <section class="card" onclick="openCategory('Aves')">
+      <img src="imagenes/guacamyo.jpeg" alt="Aves">
+      <h2>Aves</h2>
+      <p>Poseen plumas y la mayoría puede volar. Ej.: cóndor, colibrí, águila.</p>
+      <button><a href="AVES.html">Ver más</a></button>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Proyecto Educativo – Animales en Peligro de Extinción en Bolivia
+  </footer>
+
+  
+</body>
+</html>
+

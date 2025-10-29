@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ayudemos a los Animales en Peligro de Extinción</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5fff5;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(to right, #000000, #1abc9c);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        nav {
+            background-color: #16a085;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav a:hover {
+            color: #e8f6f3;
+            text-shadow: 0 0 10px white;
+        }
+
+        main {
+            padding: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            color: #16a085;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        /* Bloques combinados de texto e imagen */
+        .info-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+            transition: transform 0.4s;
+        }
+
+        .info-box:hover {
+            transform: scale(1.02);
+        }
+
+        .info-box img {
+            width: 50%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .info-text {
+            width: 50%;
+            padding: 25px;
+        }
+
+        .info-text h3 {
+            color: #1abc9c;
+            margin-bottom: 10px;
+        }
+
+        .info-text p {
+            margin-bottom: 10px;
+        }
+
+        /* Galería */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 230px;
+            height: 160px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.08);
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #16a085;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #149174;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .info-box { flex-direction: column; }
+            .info-box img, .info-text { width: 100%; height: auto; }
+            .gallery img { width: 100%; }
+        }
+
+
+
+
+        .boton-regresar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--azul);
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+
+    .boton-regresar:hover {
+      background-color: #74b9ff;
+      transform: scale(1.05);
+    }
+ .boton-regresar {
+        top: 15px;
+        left: 15px;
+        padding: 8px 15px;
+      }
+
+
+
+  </style>
+</head>
+
+<body>
+ 
+  <a href="index.html" class="boton-regresar">⬅️ Regresar</a>
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<header>
+    <h1>Ayudemos a los Animales en Peligro de Extinción</h1>
+   
+</header>
+
+<nav>
+    <a href="#importancia">Importancia</a>
+    <a href="#causas">Causas</a>
+    <a href="#acciones">Cómo Ayudar</a>
+
+    <a href="#enlaces">Enlaces</a>
+</nav>
+
+<main>
+
+    <!-- INTRODUCCIÓN -->
+    <section id="importancia">
+        <h2>¿Por qué debemos actuar?</h2>
+        <div class="info-box">
+            <img src="imagenes/jaguar.webp" alt="Jaguar en peligro">
+            <div class="info-text">
+                <h3>El equilibrio de la naturaleza depende de ellos</h3>
+                <p>Los animales en peligro de extinción no solo representan la belleza de la vida salvaje, sino también la salud de nuestros ecosistemas. 
+                Cada especie cumple un papel vital: controlan plagas, polinizan plantas y mantienen el ciclo natural del planeta.</p>
+                <p>Su desaparición provoca un efecto dominó que afecta al clima, los alimentos y al equilibrio ecológico del mundo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAUSAS -->
+    <section id="causas">
+        <h2>Causas de la Extinción</h2>
+        <div class="info-box">
+            <div class="info-text">
+                <h3>1. Destrucción de Hábitats</h3>
+                <p>La deforestación, los incendios forestales y la expansión urbana eliminan los espacios donde miles de especies viven y se reproducen.</p>
+                <p>Sin su entorno natural, muchos animales no pueden sobrevivir ni adaptarse a nuevos ecosistemas.</p>
+            </div>
+            <img src="imagenes/deforestacion.jpg" alt="Deforestación">
+        </div>
+
+        <div class="info-box">
+            <img src="imagenes/lion.jpg" alt="Caza furtiva">
+            <div class="info-text">
+                <h3>2. Caza y tráfico ilegal</h3>
+                <p>Millones de animales son cazados por su piel, colmillos o como mascotas exóticas. Este comercio ilegal es una de las mayores amenazas actuales.</p>
+                <p>La pérdida de individuos clave en una especie reduce su capacidad de reproducirse y debilita la biodiversidad global.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-text">
+                <h3>3. Contaminación y cambio climático</h3>
+                <p>El plástico, los desechos químicos y la contaminación de mares y ríos destruyen los hábitats acuáticos. 
+                Además, el cambio climático altera los patrones de migración y las fuentes de alimento.</p>
+            </div>
+            <img src="imagenes/basura.jpg" alt="Contaminación marina">
+        </div>
+    </section>
+
+    <!-- CÓMO AYUDAR -->
+    <section id="acciones">
+        <h2>¿Cómo puedes ayudar?</h2>
+        <div class="info-box">
+            <img src="imagenes/reforestacion.jpg" alt="Voluntarios reforestando">
+            <div class="info-text">
+                <h3>Acciones que generan impacto</h3>
+                <ul>
+                    <li><strong>Apoya fundaciones:</strong> dona o participa en campañas de conservación.</li>
+                    <li><strong>Reduce tu consumo:</strong> evita productos que provienen de animales en peligro.</li>
+                    <li><strong>Educa y comparte:</strong> informa a tu comunidad sobre la importancia de cuidar el ambiente.</li>
+                    <li><strong>Cuida tu entorno:</strong> recicla, planta árboles y usa menos plástico.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+<section id="como-ayudar">
+    <h2>¿Cómo puedes ayudar?</h2>
+
+    <p>
+        Ayudar a los animales en peligro de extinción es una labor que empieza con la conciencia individual y se fortalece con la acción colectiva. 
+        Cada persona puede contribuir de distintas maneras, desde cambiar hábitos cotidianos hasta participar en proyectos de conservación. 
+        Cuidar la vida salvaje significa cuidar el futuro del planeta.
+    </p>
+
+    <ul>
+        <li><strong>No apoyes el tráfico ilegal de fauna silvestre:</strong> Evita comprar animales exóticos o productos derivados de especies protegidas. 
+            Este comercio contribuye directamente a la extinción de muchas especies.</li>
+
+        <li><strong>Apoya fundaciones y reservas naturales:</strong> Organizaciones como WWF, SERNAP o la Fundación Amigos de la Naturaleza trabajan en la protección de hábitats naturales. 
+            Puedes colaborar como voluntario o realizar donaciones.</li>
+
+        <li><strong>Educa y comparte información:</strong> Habla con tus familiares, amigos y compañeros sobre la importancia de preservar la biodiversidad. 
+            La educación ambiental crea conciencia y motiva a más personas a involucrarse.</li>
+
+        <li><strong>Participa en programas de reforestación:</strong> Plantar árboles ayuda a recuperar ecosistemas y a proporcionar refugio y alimento a distintas especies animales.</li>
+
+        <li><strong>Reduce tu impacto ambiental:</strong> Reutiliza, recicla y evita el consumo excesivo de plásticos. Usa transporte ecológico siempre que sea posible y fomenta un estilo de vida sostenible.</li>
+
+        <li><strong>Denuncia la caza y el maltrato:</strong> Si observas situaciones que amenazan la vida de animales silvestres, comunícalo a las autoridades ambientales locales.</li>
+    </ul>
+
+    <div class="info-box">
+        <img src="imagenes/reforestacion.jpg" alt="Reforestación comunitaria">
+        <div class="info-text">
+            <h3>Pequeñas acciones, grandes resultados</h3>
+            <p>
+                Cuando participas en la conservación del medio ambiente, contribuyes a restaurar el equilibrio natural. 
+                Las acciones pequeñas, como sembrar un árbol o reducir el uso de plástico, pueden marcar una diferencia a gran escala. 
+                Los ecosistemas saludables garantizan el bienestar de todas las especies, incluyendo la humana.
+            </p>
+            <p>
+                En diferentes partes del mundo, miles de voluntarios colaboran en proyectos de limpieza, rescate y restauración de fauna silvestre. 
+                ¡Tú también puedes unirte a este movimiento y ser parte del cambio!
+            </p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="info-text">
+            <h3>Educar para proteger</h3>
+            <p>
+                La educación ambiental es la herramienta más poderosa para asegurar un futuro sostenible. 
+                En las escuelas, universidades y comunidades, enseñar sobre el respeto a la naturaleza ayuda a crear generaciones más responsables y comprometidas con el planeta.
+            </p>
+            <p>
+                Existen programas educativos que promueven el conocimiento sobre especies en peligro y el cuidado del entorno natural, fomentando una cultura de respeto hacia la vida.
+            </p>
+        </div>
+        <img src="imagenes/azul.jpg" alt="Educación ambiental">
+    </div>
+
+    <div class="info-box">
+        <img src="imagenes/voluntario.jpg" alt="Voluntariado ambiental">
+        <div class="info-text">
+            <h3>Involúcrate en actividades ecológicas</h3>
+            <p>
+                Existen muchas maneras de ayudar activamente: desde participar en jornadas de limpieza de ríos o playas, hasta colaborar en refugios para animales o en centros de rescate de fauna silvestre.
+            </p>
+            <p>
+                Cada acción que realizas en favor del medio ambiente contribuye a la conservación de especies y ecosistemas, inspirando a otros a hacer lo mismo.
+            </p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <div class="info-text">
+            <h3>Adopta hábitos sostenibles</h3>
+            <p>
+                Pequeños cambios en tu rutina pueden generar un gran impacto. Opta por productos reciclables, reduce el consumo de carne, 
+                evita plásticos de un solo uso y elige productos ecológicos o elaborados de forma responsable.
+            </p>
+            <p>
+                Recuerda que vivir en armonía con la naturaleza no solo protege a los animales, sino que mejora nuestra calidad de vida y la del planeta.
+            </p>
+        </div>
+        <img src="imagenes/consumo-de-plastico.jpg" alt="Reducción de plástico">
+    </div>
+
+  
+    <p style="margin-top:30px; text-align:justify;">
+        Cada acción, por pequeña que parezca, contribuye a la preservación de la vida. 
+        Si todos actuamos con responsabilidad y compromiso, lograremos un planeta donde los animales y las personas vivan en equilibrio. 
+        El cambio empieza contigo: infórmate, actúa y sé parte de <strong>UNIDOS POR LA VIDA</strong>.
+    </p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ENLACES -->
+    <section id="enlaces">
+        <h2>Más información</h2>
+        <p>Explora más recursos y únete a los esfuerzos globales por proteger a las especies en peligro:</p>
+        <ul>
+            <li><a href="https://www.worldwildlife.org/" target="_blank">World Wildlife Fund (WWF)</a></li>
+            <li><a href="https://www.iucn.org/" target="_blank">Unión Internacional para la Conservación de la Naturaleza (IUCN)</a></li>
+            <li><a href="https://www.nationalgeographic.com/animals" target="_blank">National Geographic - Animales</a></li>
+        </ul>
+    </section>
+    
+</main>
+
+<footer>
+    <p>&copy; 2025 - Unidos por la Vida. Todos los derechos reservados.</p>
+    <p>“Cuidar a los animales es cuidar nuestro hogar.” 🐾</p>
+</footer>
+
+</body>
+</html>

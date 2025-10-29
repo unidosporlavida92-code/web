@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peces en Peligro de Extinción en Bolivia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul: #000000;
+      --verde: #18956e;
+      --gris-fondo: #749c9b;
+      --texto: #2d3436;
+      --blanco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--gris-fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--azul), var(--verde));
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1100px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .animal {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: var(--blanco);
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .animal:hover {
+      transform: translateY(-6px);
+    }
+
+    .animal img {
+      width: 45%;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .animal .info {
+      flex: 1;
+    }
+
+    .animal h2 {
+      color: var(--azul);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .animal p {
+      color: #636e72;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    .right {
+      flex-direction: row-reverse;
+    }
+
+    footer {
+      background: #2d3436;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    .boton-regresar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: var(--azul);
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+
+    .boton-regresar:hover {
+      background-color: #74b9ff;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .animal {
+        flex-direction: column;
+      }
+      .animal img {
+        width: 100%;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="boton-regresar">⬅️ Regresar</a>
+
+  <header>
+    <h1>Peces en Peligro de Extinción en Bolivia</h1>
+    <p>Conoce sus hábitats, amenazas y su importancia ecológica en los ecosistemas acuáticos bolivianos.</p>
+  </header>
+
+  <main>
+    <section class="animal">
+      <img src="imagenes/karachi.jpg" alt="Karachi">
+      <div class="info">
+        <h2>Karachi (Prochilodus lineatus)</h2>
+        <p><b>Hábitat:</b> Ríos del Amazonas y del Plata; zonas con corriente media y fondos arenosos.<br>
+        <b>Amenazas principales:</b> Sobrepesca, contaminación por desechos industriales, represas que bloquean su migración.<br>
+        <b>Medidas de conservación:</b> Regulación de pesca en temporada reproductiva, protección de rutas migratorias.<br>
+        <b>Rol ecológico:</b> Filtrador natural que ayuda a mantener la calidad del agua y recicla materia orgánica.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/surubi.jfif" alt="Surubí">
+      <div class="info">
+        <h2>Surubí (Pseudoplatystoma fasciatum)</h2>
+        <p><b>Hábitat:</b> Ríos de aguas cálidas del Amazonas y del Chaco.<br>
+        <b>Amenazas principales:</b> Pesca intensiva, contaminación y construcción de represas.<br>
+        <b>Medidas de conservación:</b> Vedas pesqueras y programas de reproducción en cautiverio.<br>
+        <b>Rol ecológico:</b> Depredador tope que controla poblaciones de peces pequeños, manteniendo el equilibrio trófico.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/pez-pacu.jpg" alt="Pacú">
+      <div class="info">
+        <h2>Pacú (Colossoma macropomum)</h2>
+        <p><b>Hábitat:</b> Ríos amazónicos, lagunas y zonas inundables.<br>
+        <b>Amenazas principales:</b> Sobreexplotación y contaminación por residuos mineros.<br>
+        <b>Medidas de conservación:</b> Fomento de acuicultura sostenible y monitoreo de poblaciones silvestres.<br>
+        <b>Rol ecológico:</b> Dispersor de semillas de árboles ribereños, favoreciendo la regeneración forestal.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/dorado.jfif" alt="Dorado">
+      <div class="info">
+        <h2>Dorado (Salminus brasiliensis)</h2>
+        <p><b>Hábitat:</b> Grandes ríos de corriente rápida, como el Mamoré y el Pilcomayo.<br>
+        <b>Amenazas principales:</b> Represas, pesca deportiva y comercial excesiva.<br>
+        <b>Medidas de conservación:</b> Protección de rutas migratorias y regulación pesquera.<br>
+        <b>Rol ecológico:</b> Especie depredadora clave en el control de peces medianos.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/large.jpg" alt="Bagre del Río Mamoré">
+      <div class="info">
+        <h2>Bagre del Río Mamoré (Zungaro zungaro)</h2>
+        <p><b>Hábitat:</b> Grandes ríos amazónicos de aguas profundas.<br>
+        <b>Amenazas principales:</b> Pesca descontrolada y represas hidroeléctricas.<br>
+        <b>Medidas de conservación:</b> Regulación de capturas y estudios sobre su ciclo reproductivo.<br>
+        <b>Rol ecológico:</b> Mantiene el equilibrio trófico controlando poblaciones de peces medianos.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/sabalo.webp" alt="Sábalo">
+      <div class="info">
+        <h2>Sábalo (Brycon amazonicus)</h2>
+        <p><b>Hábitat:</b> Ríos tropicales y llanuras inundables del Amazonas y del Beni.<br>
+        <b>Amenazas principales:</b> Sobrepesca, pérdida de hábitats y contaminación.<br>
+        <b>Medidas de conservación:</b> Control de temporadas de pesca y educación ambiental a comunidades ribereñas.<br>
+        <b>Rol ecológico:</b> Especie migratoria que transporta nutrientes y mantiene el flujo ecológico del río.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/arawana.jpg" alt="Arawana">
+      <div class="info">
+        <h2>Arawana (Osteoglossum bicirrhosum)</h2>
+        <p><b>Hábitat:</b> Lagos y ríos amazónicos con vegetación flotante.<br>
+        <b>Amenazas principales:</b> Tráfico ilegal como pez ornamental y contaminación por mercurio.<br>
+        <b>Medidas de conservación:</b> Control del comercio y educación sobre su rol ecológico.<br>
+        <b>Rol ecológico:</b> Depredador de superficie que controla poblaciones de insectos y peces pequeños.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/anguila.jfif" alt="Anguila Boliviana">
+      <div class="info">
+        <h2>Anguila Boliviana (Synbranchus marmoratus)</h2>
+        <p><b>Hábitat:</b> Pantanos, lagunas y canales de agua lenta.<br>
+        <b>Amenazas principales:</b> Contaminación y modificación de los cursos de agua.<br>
+        <b>Medidas de conservación:</b> Restauración de humedales y control de vertidos contaminantes.<br>
+        <b>Rol ecológico:</b> Contribuye al control de poblaciones de invertebrados acuáticos.</p>
+      </div>
+    </section>
+
+    <section class="animal">
+      <img src="imagenes/piraña.jfif" alt="Piraña Roja">
+      <div class="info">
+        <h2>Piraña Roja (Pygocentrus nattereri)</h2>
+        <p><b>Hábitat:</b> Ríos y lagunas cálidas del Amazonas y el Beni.<br>
+        <b>Amenazas principales:</b> Pesca intensiva y alteración del hábitat por deforestación.<br>
+        <b>Medidas de conservación:</b> Educación sobre su función ecológica y regulación de captura.<br>
+        <b>Rol ecológico:</b> Elimina organismos enfermos o muertos, manteniendo la salud del ecosistema.</p>
+      </div>
+    </section>
+
+    <section class="animal right">
+      <img src="imagenes/corvina.jfif" alt="Corvina del Lago Titicaca">
+      <div class="info">
+        <h2>Corvina del Lago Titicaca (Trichomycterus rivulatus)</h2>
+        <p><b>Hábitat:</b> Aguas frías y profundas del Lago Titicaca.<br>
+        <b>Amenazas principales:</b> Introducción de especies exóticas (trucha y pejerrey) y contaminación.<br>
+        <b>Medidas de conservación:</b> Protección del lago y monitoreo científico de poblaciones.<br>
+        <b>Rol ecológico:</b> Parte esencial de la cadena alimenticia lacustre, contribuye al equilibrio del ecosistema altoandino.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Proyecto Educativo – Peces en Peligro de Extinción en Bolivia
+  </footer>
+</body>
+</html>
